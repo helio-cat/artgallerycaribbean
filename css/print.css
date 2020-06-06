@@ -1,0 +1,57 @@
+*{margin:0;padding:0;box-sizing: border-box;}
+*:after, *:before {content: "";}
+
+/************************************************************************/
+
+html, body{height:100%;} 
+body {font-family:Arial, Helvetica, sans-serif;font-size:100%; padding:20px; background:white; color: #2f2f2f;}
+
+/************************************************************************/
+
+h1,h2,h3,h4,h5,h6{margin-bottom: 0.6em;}
+h1,h2,h3,h4{font-weight: normal;}
+h1,h2{font-size: 2.2em;}
+h1 a, h2 a{text-decoration: none;}
+h2{margin-top:1.6em;}
+h2.first{margin-top:0;}
+h3{font-size: 1.8em;}
+h4{font-size: 1.5em;}
+h5{font-size: 1em;}
+h6{font-size: 0.9em;}
+
+/**********************************************************************/
+
+p, ul, ol{margin-bottom: 1.6em;line-height: 1.5;}
+ul, ol{margin-left: 2.7em;}
+hr {clear: both;margin: 2em 0; border: 0; height: 1px; border-top: 1px solid silver;} 
+
+/**********************************************************************/
+
+a{outline: none;}
+a:link {color: #3151a2;}
+a:visited {color: #5c7996;}
+a:hover,a:active {color: #ca0002; text-decoration: none;}
+a img {border: none;}
+
+/**********************************************************************/
+
+.clear:after{display: table;clear: both;}
+.textcenter{text-align: center;}
+
+/**********************************************************************/
+
+img {display:block;border: 0; max-width: 100%; height: auto !important;}
+img.floatleft {float: left; margin: 0 1em 0 0;}
+img.floatright {float: right; margin: 0 0 0 1em;}
+
+/************************************************************************/
+
+#cartItems {margin-bottom:20px;}
+#cartItems div{overflow:hidden; padding:20px 0;}
+#cartItems p{float:left;margin:0;width:200px; text-align: right;}
+#cartItems p img{display:inline;}
+#cartItems ul{overflow:hidden;list-style: none;margin:0;padding: 0 0 0 20px;line-height: 2;}
+#cartItems li{ border-bottom: 1px solid #a9a9a9; }
+#cartItems strong{ margin-right:10px;  color: #a0522d;  font-weight: normal; }
+
+#cartItemsFoot{text-align: right;}

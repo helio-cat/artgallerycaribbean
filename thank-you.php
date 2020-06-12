@@ -99,6 +99,7 @@
             echo '<h4>Selected ' . $piece . '</h4>';
             
             $subtotal = 0;
+			$subtotal2 = 0;
             
 			echo '<div id="cartItems">';
 			
@@ -106,6 +107,7 @@
                 echo '<div>';
                 
                     $subtotal += $result['retailPrice'];
+					$subtotal2 += $result['retailPrice'];
                     
                     $fname = empty($result['firstName']) ? '' : $result['firstName'];
                     $lname = empty($result['lastName']) ? '' : ' ' . $result['lastName'];
@@ -138,6 +140,7 @@
 			echo '</div>';
             
             $subtotal = number_format($subtotal,2);
+			$subtotal2 = number_format($subtotal2,2,'.','');
             
             echo '<div id="cartItemsFoot">';
         
@@ -158,6 +161,20 @@
 	include 'includes/footer.php';
 		
 ?>
-           
+
+<script type="text/javascript">
+    
+    fbq('track', 'Purchase', {
+    value: '<?php echo $subtotal2;?>',
+    currency: 'BBD',
+    contents: [
+    {
+        id: '<?php echo $ckout["orderno"];?>',
+        quantity: '1'
+    }],
+    });
+   
+</script>
+     
 </body>
 </html>

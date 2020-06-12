@@ -260,6 +260,10 @@
 		
 		overlay.addClass('spinner').show();
 		
+ 		 fbq('track', 'AddToCart', {
+   		 content_ids: id,
+  		});
+
 		$.ajax({
 			type: 'POST',
 			url: '/ajax/cart_add.php',

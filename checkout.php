@@ -72,19 +72,22 @@
 		echo '<div id="checkoutItems">';
 			
 			$subtotal = 0;
+			$subtotal2 = 0;
 			
 			echo '<i class="highlight">Hover over name to show image</i><br>';
 			foreach($items as $result){
 				$subtotal += $result['retailPrice'];
+				$subtotal2 += $result['retailPrice'];
 				echo '<div>';
 					echo '<span class="ipreview" data-src="' . $result['pictures'][0] . '"><i class="far fa-image"></i> ' . $result['title'] . '</span>';
-					echo '<em>$' . $result['retailPrice'] . ' BDS</em>';
+					echo '<em>$' . number_format($result['retailPrice'],2) . ' BBD</em>';
 				echo '</div>';
 			}
 			
 			$subtotal = number_format($subtotal,2);
+			$subtotal2 = number_format($subtotal2,2,'.','');
 			
-			echo '<p><strong>Subtotal:</strong> $' . $subtotal . ' BDS</p>';
+			echo '<p><strong>Subtotal:</strong> $' . $subtotal . ' BBD</p>';
         
         echo '</div>';
     
@@ -106,7 +109,7 @@
         </div>
         
         <input type="hidden" name="loadtime" value="<?php echo time();?>">
-		<input type="hidden" name="token" value="<?php echo $_SESSION['token'];?>">
+		<input type="hidden" id="token" name="token" value="<?php echo $_SESSION['token'];?>">
         <input type="hidden" name="remote_ip" value="<?php echo $_SERVER['REMOTE_ADDR'];?>">
         
         <div class="fbtn-right"><button type="submit" id="sndbtn"><i class="far fa-envelope"></i> send</button></div>
@@ -123,12 +126,18 @@
      
 <script type="text/javascript">
 	
+  fbq('track', 'InitiateCheckout', {  
+	value: '<?php echo $subtotal2;?>',
+    currency: 'BBD',
+  });
+	
 	var form1 = $('#form1'),
 		fullname = $('#fullname'), 
 		email = $('#email'), 
 		phone = $('#phone'), 
 		paperclip = $('#paperclip'),
-		sndbtn = $('#sndbtn');
+		sndbtn = $('#sndbtn'),
+		token = $('#token');
 	
 	var overlay = $('.overlay'),
 		lbModal = $('#lbModal'),

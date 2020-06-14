@@ -171,10 +171,10 @@
 								echo '<dt>Medium:</dt> <dd>' . $result['medium'] . '</dd>';
 								echo '<dt>Dimensions:</dt> <dd>' . $dimentions . '</dd>';
 								echo '<dt>Item Number:</dt> <dd>' . $result['itemId'] . '</dd>';
-								echo '<dt>Price:</dt> <dd>$' . $result['retailPrice'] . ' BBD</dd>';
-
-							echo '</dl>';			
-
+								echo '<dt>Price:</dt> <dd>$' . $result['retailPrice'] . ' BBD</dd>';			
+							
+							echo '</dl>';
+							
 							echo '<a href="/item.php?itemId=' . $result['itemId'] . '" 
 							data-img="' . $result['pictures'][0] . '" 
 							data-artist="' . $fullname . '" 
@@ -187,29 +187,11 @@
 							title="' . $result['title'] . '">
 							<img src="' . $result['pictures'][0] . '"></a>';
 							
-							echo '<span><em id="showinfo"><i class="fas fa-info-circle"></i> info</em> <em id="addtocart" data-price2="' . $result['retailPrice'] . '" data-itemid2="' . $result['itemId'] . '"><i class="fas fa-shopping-cart"></i> add</em></span>';					
+							echo '<span><em id="showinfo"><i class="fas fa-info-circle"></i> info</em> <em id="addtocart" data-price2="' . $result['retailPrice'] . '" data-itemid2="' . $result['itemId'] . '"><i class="fas fa-shopping-cart"></i> add</em></span>';
 							
 						echo '</li>';
 						
-					}	include 'includes/schema.php';
-						/********* BEGIN SCHEMA FOR PRODUCT MICRODATA  **************
-						
-						echo '<div itemscope itemtype="http://schema.org/Product"';
-							echo '<meta itemprop="brand" content="'. $fullname .'"/>';
-							echo '<meta itemprop="name" content="' . $result['title'] . '"/>';
-							echo '<meta itemprop="productID" content="' . $result['title'] . '"/>';
-							echo '<meta itemprop="url" content="https://artgallerycaribbean.com/item.php?itemId=' . $result['itemId'] . '"/>';
-							echo '<meta itemprop="image" content="' . $result['pictures'][0] . '"/>';
-							echo '<meta itemprop="description" content=" ' . $result['title'] . ' by ' . $fullname . '. ' . $result['medium'] . ' - ' . $dimentions . '"/>';
-							echo '<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">';
-								echo '<meta itemprop="availability" content="available for order"/>';
-								echo '<link itemprop="condition" href="https://schema.org/NewCondition"/>';
-								echo '<meta itemprop="price" content="' . $result['retailPrice'] . '"/>';
-								echo '<meta itemprop="priceCurrency" content="BBD"/>';
-							echo '</div>';
-						echo '</div>';
-
-						/********************* END SCHEMA  ***************************/
+					}
 				}
 				echo '</ul>';
 			

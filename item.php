@@ -85,6 +85,12 @@
 		echo '</div>';
 	
 	echo '</div>';
+
+	$result = $selitem;
+
+	$dimentions = 'W' . round($result['width']) . 'in x H' . round($result['height']) . 'in';
+
+	include 'includes/schema.php';
             
 	include 'includes/footer.php';
 		
@@ -103,6 +109,13 @@
 	function addtocart(id){
 		
 		overlay.addClass('spinner').show();
+
+		fbq('track', 'AddToCart', {
+			value: val,
+			currency: 'BBD',
+			content_type: 'product',
+		 	content_ids: id,
+  		});
 		
 		$.ajax({
 			type: 'POST',

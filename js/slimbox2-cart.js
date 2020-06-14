@@ -236,6 +236,7 @@
 			fbq('track', 'ViewContent', {
 				value: price,
 				currency: 'BBD',
+				content_type: 'product',
 				content_ids: itemId,
 			}); 
 		

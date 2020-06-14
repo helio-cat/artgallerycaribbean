@@ -167,6 +167,7 @@
     fbq('track', 'Purchase', {
     value: '<?php echo $subtotal2;?>',
     currency: 'BBD',
+    content_type: 'product'
     contents: [
     {
         id: '<?php echo $ckout["orderno"];?>',
